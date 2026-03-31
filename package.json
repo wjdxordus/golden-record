@@ -1,0 +1,12 @@
+{
+  "name": "golden-record-landing",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Static landing page for Golden Record",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
