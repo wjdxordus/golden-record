@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>골든레코드 — AI가 대신 기록하는 우리 가족 앨범</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --warm-cream: #FFF8F0;
+  --soft-gold: #C9A84C;
+  --deep-navy: #1B2D4F;
+  --warm-coral: #E8785A;
+  --muted-sage: #8BA888;
+  --soft-brown: #A68B6A;
+  --light-gray: #F5F0EB;
+  --text-dark: #2C2520;
+  --text-mid: #6B5E54;
+  --text-light: #9B8E84;
+  --card-shadow: 0 4px 24px rgba(44,37,32,0.08);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Sans KR', -apple-system, sans-serif;
+  background: var(--warm-cream);
+  color: var(--text-dark);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ─── HERO ─── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 60px 24px 40px;
+  position: relative;
+  background: linear-gradient(175deg, #FFF8F0 0%, #FFF1E3 40%, #FFE8D6 100%);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  right: -80px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%);
+  animation: floatOrb 8s ease-in-out infinite;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  left: -60px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232,120,90,0.08) 0%, transparent 70%);
+  animation: floatOrb 10s ease-in-out infinite reverse;
+}
+
+@keyframes floatOrb {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(20px, -30px) scale(1.1); }
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: rgba(201,168,76,0.12);
+  border: 1px solid rgba(201,168,76,0.25);
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--soft-brown);
+  margin-bottom: 28px;
+  animation: fadeUp 0.8s ease-out;
+}
+
+.hero-badge .dot {
+  width: 6px;
+  height: 6px;
+  background: var(--warm-coral);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.hero h1 {
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 1.35;
+  color: var(--deep-navy);
+  margin-bottom: 20px;
+  animation: fadeUp 0.8s ease-out 0.1s both;
+  letter-spacing: -0.5px;
+  word-break: keep-all;
+}
+
+.hero h1 em {
+  font-style: normal;
+  color: var(--warm-coral);
+  position: relative;
+}
+
+.hero h1 em::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: rgba(232,120,90,0.15);
+  border-radius: 4px;
+  z-index: -1;
+}
+
+.hero-sub {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-mid);
+  font-weight: 300;
+  margin-bottom: 36px;
+  animation: fadeUp 0.8s ease-out 0.2s both;
+  word-break: keep-all;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 36px;
+  background: var(--deep-navy);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 60px;
+  cursor: pointer;
+  text-decoration: none;
+  animation: fadeUp 0.8s ease-out 0.3s both;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 8px 32px rgba(27,45,79,0.25);
+}
+
+.hero-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(27,45,79,0.35);
+}
+
+.hero-cta .arrow {
+  transition: transform 0.2s;
+}
+
+.hero-cta:hover .arrow {
+  transform: translateX(4px);
+}
+
+.hero-phone {
+  margin-top: 48px;
+  position: relative;
+  animation: fadeUp 1s ease-out 0.4s both;
+}
+
+.phone-frame {
+  width: 260px;
+  height: 480px;
+  background: #fff;
+  border-radius: 32px;
+  box-shadow: 0 20px 60px rgba(27,45,79,0.15), 0 0 0 1px rgba(0,0,0,0.05);
+  overflow: hidden;
+  position: relative;
+}
+
+.phone-notch {
+  width: 120px;
+  height: 28px;
+  background: #1a1a1a;
+  border-radius: 0 0 16px 16px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.phone-screen {
+  padding: 8px 16px 16px;
+}
+
+.phone-header {
+  text-align: center;
+  padding: 12px 0 16px;
+}
+
+.phone-header .logo-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  color: var(--soft-gold);
+  letter-spacing: 1px;
+}
+
+.phone-header .date {
+  font-size: 11px;
+  color: var(--text-light);
+  margin-top: 4px;
+}
+
+.phone-card {
+  background: var(--light-gray);
+  border-radius: 16px;
+  padding: 14px;
+  margin-bottom: 10px;
+}
+
+.phone-card-img {
+  width: 100%;
+  height: 120px;
+  border-radius: 12px;
+  object-fit: cover;
+  background: linear-gradient(135deg, #E8D5C0, #D4C4B0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.phone-card-comment {
+  font-size: 12px;
+  color: var(--text-mid);
+  line-height: 1.5;
+  padding: 8px 10px;
+  background: #fff;
+  border-radius: 10px;
+  border-left: 3px solid var(--soft-gold);
+}
+
+.phone-card-comment .ai-tag {
+  font-size: 10px;
+  color: var(--soft-gold);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 3px;
+}
+
+.phone-card-meta {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  font-size: 10px;
+  color: var(--text-light);
+}
+
+.phone-card-meta span {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── PAIN POINTS ─── */
+.section {
+  padding: 80px 24px;
+}
+
+.section-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--soft-gold);
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: 26px;
+  font-weight: 900;
+  line-height: 1.4;
+  color: var(--deep-navy);
+  margin-bottom: 16px;
+  word-break: keep-all;
+  letter-spacing: -0.3px;
+}
+
+.section-desc {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-mid);
+  font-weight: 300;
+  margin-bottom: 40px;
+  word-break: keep-all;
+}
+
+.pain-section {
+  background: #fff;
+}
+
+.pain-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pain-card {
+  display: flex;
+  gap: 16px;
+  padding: 24px;
+  background: var(--light-gray);
+  border-radius: 20px;
+  align-items: flex-start;
+  transition: transform 0.3s;
+}
+
+.pain-card:hover {
+  transform: translateY(-2px);
+}
+
+.pain-icon {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.pain-icon.scroll { background: rgba(232,120,90,0.12); }
+.pain-icon.record { background: rgba(139,168,136,0.15); }
+.pain-icon.search { background: rgba(201,168,76,0.12); }
+
+.pain-card h4 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--text-dark);
+}
+
+.pain-card p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-mid);
+  font-weight: 300;
+  word-break: keep-all;
+}
+
+.pain-quote {
+  margin-top: 32px;
+  padding: 24px;
+  background: var(--warm-cream);
+  border-radius: 20px;
+  border-left: 4px solid var(--warm-coral);
+}
+
+.pain-quote p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-dark);
+  font-weight: 400;
+  font-style: italic;
+  word-break: keep-all;
+}
+
+.pain-quote .source {
+  font-size: 12px;
+  color: var(--text-light);
+  font-style: normal;
+  margin-top: 8px;
+}
+
+/* ─── FEATURES ─── */
+.features-section {
+  background: var(--deep-navy);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.features-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at 30% 20%, rgba(201,168,76,0.08) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 80%, rgba(232,120,90,0.06) 0%, transparent 50%);
+}
+
+.features-section .section-label {
+  color: var(--soft-gold);
+}
+
+.features-section .section-title {
+  color: #fff;
+}
+
+.features-section .section-desc {
+  color: rgba(255,255,255,0.6);
+}
+
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.feature-item {
+  padding: 28px 24px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  transition: background 0.3s;
+}
+
+.feature-item:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.feature-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: var(--soft-gold);
+  color: var(--deep-navy);
+  font-size: 13px;
+  font-weight: 900;
+  border-radius: 8px;
+  margin-bottom: 14px;
+}
+
+.feature-item h4 {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.feature-item p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.55);
+  font-weight: 300;
+  word-break: keep-all;
+}
+
+.feature-tag {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 4px 12px;
+  background: rgba(201,168,76,0.15);
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 100px;
+  font-size: 11px;
+  color: var(--soft-gold);
+  font-weight: 500;
+}
+
+/* ─── HOW IT WORKS ─── */
+.how-section {
+  background: var(--light-gray);
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+}
+
+.step {
+  display: flex;
+  gap: 20px;
+  padding-bottom: 36px;
+  position: relative;
+}
+
+.step:last-child { padding-bottom: 0; }
+
+.step-line {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 40px;
+}
+
+.step-dot {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  background: #fff;
+  box-shadow: var(--card-shadow);
+  position: relative;
+  z-index: 1;
+}
+
+.step-connector {
+  width: 2px;
+  flex: 1;
+  background: linear-gradient(to bottom, var(--soft-gold), rgba(201,168,76,0.2));
+  margin-top: 8px;
+}
+
+.step:last-child .step-connector {
+  display: none;
+}
+
+.step-content {
+  padding-top: 8px;
+}
+
+.step-content h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--deep-navy);
+}
+
+.step-content p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-mid);
+  font-weight: 300;
+  word-break: keep-all;
+}
+
+/* ─── SOCIAL PROOF ─── */
+.proof-section {
+  background: #fff;
+}
+
+.proof-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.proof-card {
+  padding: 24px;
+  background: var(--warm-cream);
+  border-radius: 20px;
+}
+
+.proof-card .stars {
+  color: var(--soft-gold);
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.proof-card .quote {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+  word-break: keep-all;
+}
+
+.proof-card .author {
+  font-size: 12px;
+  color: var(--text-light);
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 20px 8px;
+  background: var(--light-gray);
+  border-radius: 16px;
+}
+
+.stat-num {
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--deep-navy);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: var(--text-light);
+  margin-top: 6px;
+  word-break: keep-all;
+}
+
+/* ─── CTA ─── */
+.cta-section {
+  padding: 80px 24px;
+  text-align: center;
+  background: linear-gradient(175deg, var(--warm-cream) 0%, #FFE8D6 100%);
+  position: relative;
+}
+
+.cta-section h2 {
+  font-size: 26px;
+  font-weight: 900;
+  line-height: 1.4;
+  color: var(--deep-navy);
+  margin-bottom: 12px;
+  word-break: keep-all;
+}
+
+.cta-section .sub {
+  font-size: 15px;
+  color: var(--text-mid);
+  font-weight: 300;
+  margin-bottom: 32px;
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+.cta-form {
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.cta-input {
+  width: 100%;
+  padding: 16px 20px;
+  border: 2px solid rgba(27,45,79,0.1);
+  border-radius: 16px;
+  font-size: 15px;
+  font-family: inherit;
+  background: #fff;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+  transition: border-color 0.2s;
+  outline: none;
+}
+
+.cta-input:focus {
+  border-color: var(--soft-gold);
+}
+
+.cta-input::placeholder {
+  color: var(--text-light);
+}
+
+.cta-btn {
+  width: 100%;
+  padding: 18px;
+  background: var(--warm-coral);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: inherit;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 8px 32px rgba(232,120,90,0.3);
+}
+
+.cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(232,120,90,0.4);
+}
+
+.cta-btn:active {
+  transform: translateY(0);
+}
+
+.cta-note {
+  font-size: 12px;
+  color: var(--text-light);
+  margin-top: 16px;
+  line-height: 1.5;
+}
+
+.cta-note strong {
+  color: var(--warm-coral);
+  font-weight: 700;
+}
+
+/* ─── FOOTER ─── */
+footer {
+  padding: 40px 24px;
+  text-align: center;
+  background: var(--deep-navy);
+  color: rgba(255,255,255,0.4);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+footer .footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  color: var(--soft-gold);
+  margin-bottom: 12px;
+}
+
+/* ─── FLOATING NAV ─── */
+.float-cta {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  padding: 14px 32px;
+  background: var(--warm-coral);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+  border: none;
+  border-radius: 60px;
+  cursor: pointer;
+  box-shadow: 0 8px 32px rgba(232,120,90,0.4);
+  transition: transform 0.2s, opacity 0.3s;
+  opacity: 0;
+  pointer-events: none;
+  text-decoration: none;
+}
+
+.float-cta.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.float-cta:hover {
+  transform: translateX(-50%) translateY(-2px);
+}
+
+/* ─── RESPONSIVE ─── */
+@media (min-width: 640px) {
+  .hero h1 { font-size: 42px; }
+  .section-title { font-size: 32px; }
+  .pain-cards { display: grid; grid-template-columns: 1fr 1fr; }
+  .feature-list { display: grid; grid-template-columns: 1fr 1fr; }
+  .proof-cards { display: grid; grid-template-columns: 1fr 1fr; }
+  .section { padding: 100px 40px; }
+}
+
+@media (min-width: 960px) {
+  .hero h1 { font-size: 48px; }
+  .section { padding: 120px 60px; max-width: 900px; margin: 0 auto; }
+  .hero { max-width: none; }
+}
+
+/* ─── ANIMATIONS ON SCROLL ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+</head>
+<body>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero-badge">
+    <span class="dot"></span>
+    곧 출시 예정
+  </div>
+  <h1>
+    사진은 매일 찍는데<br>
+    기록은 왜 <em>못 할까요?</em>
+  </h1>
+  <p class="hero-sub">
+    AI가 사진을 자동으로 정리하고,<br>
+    당신 대신 하루를 기록합니다.
+  </p>
+
+  <div class="hero-phone">
+    <div class="phone-frame">
+      <div class="phone-notch"></div>
+      <div class="phone-screen">
+        <div class="phone-header">
+          <div class="logo-text">GOLDEN RECORD</div>
+          <div class="date">2026년 3월 31일 화요일</div>
+        </div>
+        <div class="phone-card">
+          <div class="phone-card-img" style="background: #D6EAF5; padding: 0; overflow: hidden;">
+            <svg viewBox="0 0 228 120" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+              <defs>
+                <linearGradient id="ghibliSky" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#9CC8E8"/>
+                  <stop offset="40%" stop-color="#C5DFF0"/>
+                  <stop offset="100%" stop-color="#F2E6D4"/>
+                </linearGradient>
+                <radialGradient id="sunGlow" cx="75%" cy="20%" r="35%">
+                  <stop offset="0%" stop-color="#FFF8E0" stop-opacity="0.8"/>
+                  <stop offset="100%" stop-color="#FFF8E0" stop-opacity="0"/>
+                </radialGradient>
+                <radialGradient id="pinkBloom" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#FADCE5" stop-opacity="0.95"/>
+                  <stop offset="40%" stop-color="#F5B8C9" stop-opacity="0.8"/>
+                  <stop offset="100%" stop-color="#F2A0B5" stop-opacity="0"/>
+                </radialGradient>
+                <radialGradient id="pinkBloom2" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#FCE4EC" stop-opacity="0.9"/>
+                  <stop offset="50%" stop-color="#F8BBD0" stop-opacity="0.7"/>
+                  <stop offset="100%" stop-color="#F48FB1" stop-opacity="0"/>
+                </radialGradient>
+                <filter id="soft" x="-10%" y="-10%" width="120%" height="120%">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="0.5"/>
+                </filter>
+                <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="2"/>
+                </filter>
+              </defs>
+              <!-- sky -->
+              <rect width="228" height="120" fill="url(#ghibliSky)"/>
+              <rect width="228" height="120" fill="url(#sunGlow)"/>
+              <!-- soft clouds -->
+              <g filter="url(#glow)" opacity="0.4">
+                <ellipse cx="50" cy="22" rx="28" ry="8" fill="#fff"/>
+                <ellipse cx="160" cy="16" rx="22" ry="6" fill="#fff"/>
+                <ellipse cx="200" cy="28" rx="16" ry="5" fill="#fff"/>
+              </g>
+              <!-- distant hills -->
+              <ellipse cx="114" cy="108" rx="160" ry="35" fill="#B5D8A3" opacity="0.35"/>
+              <!-- grass -->
+              <ellipse cx="114" cy="116" rx="150" ry="22" fill="#8FC47E" opacity="0.6"/>
+              <ellipse cx="114" cy="120" rx="160" ry="20" fill="#7AB86A" opacity="0.5"/>
+              <!-- tiny flowers -->
+              <g opacity="0.6">
+                <circle cx="30" cy="108" r="1.5" fill="#FFE082"/>
+                <circle cx="55" cy="112" r="1.2" fill="#FCE4EC"/>
+                <circle cx="75" cy="110" r="1.3" fill="#FFE082"/>
+                <circle cx="145" cy="109" r="1.4" fill="#FCE4EC"/>
+                <circle cx="170" cy="112" r="1.2" fill="#FFE082"/>
+                <circle cx="195" cy="108" r="1.5" fill="#FCE4EC"/>
+              </g>
+              <!-- LEFT cherry tree -->
+              <path d="M42 105 Q40 80 38 60 Q37 50 40 45" stroke="#7D6052" stroke-width="5" fill="none" stroke-linecap="round"/>
+              <path d="M39 65 Q32 55 26 50" stroke="#7D6052" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <path d="M40 55 Q48 45 55 42" stroke="#7D6052" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <g filter="url(#soft)">
+                <circle cx="38" cy="30" r="18" fill="url(#pinkBloom)"/>
+                <circle cx="24" cy="38" r="15" fill="url(#pinkBloom2)"/>
+                <circle cx="52" cy="34" r="16" fill="url(#pinkBloom)"/>
+                <circle cx="30" cy="20" r="14" fill="url(#pinkBloom2)"/>
+                <circle cx="48" cy="22" r="13" fill="url(#pinkBloom)"/>
+                <circle cx="20" cy="28" r="12" fill="url(#pinkBloom)"/>
+                <circle cx="56" cy="44" r="11" fill="url(#pinkBloom2)"/>
+                <circle cx="42" cy="14" r="10" fill="url(#pinkBloom2)"/>
+              </g>
+              <g fill="#E8879A" opacity="0.5">
+                <circle cx="30" cy="25" r="1.5"/><circle cx="45" cy="30" r="1.3"/>
+                <circle cx="22" cy="35" r="1.4"/><circle cx="50" cy="20" r="1.2"/>
+              </g>
+              <!-- RIGHT cherry tree -->
+              <path d="M182 105 Q180 82 179 62 Q178 52 180 48" stroke="#7D6052" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+              <path d="M180 68 Q188 58 194 54" stroke="#7D6052" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <path d="M179 58 Q172 48 168 45" stroke="#7D6052" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <g filter="url(#soft)">
+                <circle cx="180" cy="34" r="17" fill="url(#pinkBloom)"/>
+                <circle cx="168" cy="40" r="14" fill="url(#pinkBloom2)"/>
+                <circle cx="194" cy="38" r="15" fill="url(#pinkBloom)"/>
+                <circle cx="174" cy="24" r="12" fill="url(#pinkBloom2)"/>
+                <circle cx="190" cy="26" r="11" fill="url(#pinkBloom)"/>
+                <circle cx="164" cy="48" r="10" fill="url(#pinkBloom)"/>
+                <circle cx="198" cy="50" r="9" fill="url(#pinkBloom2)"/>
+              </g>
+              <g fill="#E8879A" opacity="0.5">
+                <circle cx="175" cy="28" r="1.4"/><circle cx="190" cy="33" r="1.2"/>
+                <circle cx="168" cy="44" r="1.3"/>
+              </g>
+              <!-- picnic blanket -->
+              <ellipse cx="112" cy="102" rx="28" ry="8" fill="#E85D5D" opacity="0.45"/>
+              <ellipse cx="112" cy="102" rx="26" ry="7" fill="#F28B82" opacity="0.35"/>
+              <!-- DAD -->
+              <g>
+                <ellipse cx="97" cy="96" rx="8" ry="10" fill="#5B8DB8"/>
+                <circle cx="97" cy="80" r="8.5" fill="#FDDCB5"/>
+                <path d="M88 78 Q89 70 97 69 Q105 70 106 78 Q104 74 97 73 Q90 74 88 78Z" fill="#4A3728"/>
+                <ellipse cx="94" cy="80" rx="1.3" ry="1.6" fill="#3A3020"/>
+                <ellipse cx="100" cy="80" rx="1.3" ry="1.6" fill="#3A3020"/>
+                <circle cx="94.5" cy="79.5" r="0.4" fill="#fff"/>
+                <circle cx="100.5" cy="79.5" r="0.4" fill="#fff"/>
+                <path d="M93.5 83.5 Q97 86 100.5 83.5" fill="none" stroke="#8B6F5E" stroke-width="0.8" stroke-linecap="round"/>
+                <ellipse cx="92" cy="82.5" rx="2" ry="1" fill="#F4A6A0" opacity="0.35"/>
+                <ellipse cx="102" cy="82.5" rx="2" ry="1" fill="#F4A6A0" opacity="0.35"/>
+                <path d="M104 92 Q108 88 110 90" stroke="#5B8DB8" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+              </g>
+              <!-- CHILD -->
+              <g>
+                <ellipse cx="112" cy="97" rx="6" ry="8" fill="#F7C948"/>
+                <circle cx="112" cy="83" r="7.5" fill="#FDDCB5"/>
+                <path d="M104 81 Q105 74 112 73 Q119 74 120 81 Q119 78 112 77 Q105 78 104 81Z" fill="#3A2818"/>
+                <path d="M104 81 Q104 84 105 85" stroke="#3A2818" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <path d="M120 81 Q120 84 119 85" stroke="#3A2818" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <ellipse cx="109.5" cy="83" rx="1.5" ry="1.8" fill="#3A3020"/>
+                <ellipse cx="114.5" cy="83" rx="1.5" ry="1.8" fill="#3A3020"/>
+                <circle cx="110" cy="82.5" r="0.5" fill="#fff"/>
+                <circle cx="115" cy="82.5" r="0.5" fill="#fff"/>
+                <path d="M109 86.5 Q112 89 115 86.5" fill="none" stroke="#8B6F5E" stroke-width="0.8" stroke-linecap="round"/>
+                <ellipse cx="107.5" cy="85.5" rx="2" ry="1" fill="#F4A6A0" opacity="0.4"/>
+                <ellipse cx="116.5" cy="85.5" rx="2" ry="1" fill="#F4A6A0" opacity="0.4"/>
+                <path d="M107 94 Q104 88 102 86" stroke="#F7C948" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                <path d="M117 94 Q120 89 122 87" stroke="#F7C948" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                <circle cx="101.5" cy="85.5" r="2" fill="#FDDCB5"/>
+                <circle cx="122.5" cy="86.5" r="2" fill="#FDDCB5"/>
+              </g>
+              <!-- MOM -->
+              <g>
+                <ellipse cx="127" cy="96" rx="7.5" ry="10" fill="#D4726A"/>
+                <circle cx="127" cy="80" r="8" fill="#FDDCB5"/>
+                <path d="M119 78 Q120 70 127 69 Q134 70 135 78 Q133 74 127 73 Q121 74 119 78Z" fill="#4A2818"/>
+                <path d="M119 78 Q118 86 119 92" stroke="#4A2818" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                <path d="M135 78 Q136 86 135 92" stroke="#4A2818" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                <ellipse cx="124.5" cy="80" rx="1.3" ry="1.6" fill="#3A3020"/>
+                <ellipse cx="129.5" cy="80" rx="1.3" ry="1.6" fill="#3A3020"/>
+                <circle cx="125" cy="79.5" r="0.4" fill="#fff"/>
+                <circle cx="130" cy="79.5" r="0.4" fill="#fff"/>
+                <path d="M124 83.5 Q127 86 130 83.5" fill="none" stroke="#8B6F5E" stroke-width="0.8" stroke-linecap="round"/>
+                <ellipse cx="122.5" cy="82.5" rx="2" ry="1" fill="#F4A6A0" opacity="0.35"/>
+                <ellipse cx="131.5" cy="82.5" rx="2" ry="1" fill="#F4A6A0" opacity="0.35"/>
+                <path d="M120 92 Q116 88 114 90" stroke="#D4726A" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+              </g>
+              <!-- falling petals -->
+              <g>
+                <ellipse cx="68" cy="48" rx="2.5" ry="1.5" fill="#F8C8D4" opacity="0.7" transform="rotate(25 68 48)">
+                  <animateTransform attributeName="transform" type="translate" values="0,0;10,25;20,50" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0.7;0.4;0" dur="5s" repeatCount="indefinite"/>
+                </ellipse>
+                <ellipse cx="145" cy="35" rx="2" ry="1.3" fill="#FBDAE2" opacity="0.6" transform="rotate(-15 145 35)">
+                  <animateTransform attributeName="transform" type="translate" values="0,0;-8,30;-16,60" dur="6s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0.6;0.3;0" dur="6s" repeatCount="indefinite"/>
+                </ellipse>
+                <ellipse cx="100" cy="25" rx="2.2" ry="1.4" fill="#F8C8D4" opacity="0.55" transform="rotate(40 100 25)">
+                  <animateTransform attributeName="transform" type="translate" values="0,0;5,35;10,70" dur="7s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0.55;0.3;0" dur="7s" repeatCount="indefinite"/>
+                </ellipse>
+                <ellipse cx="82" cy="55" rx="1.8" ry="1.2" fill="#FCE4EC" opacity="0.6">
+                  <animateTransform attributeName="transform" type="translate" values="0,0;-4,20;-8,40" dur="4s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0.6;0.3;0" dur="4s" repeatCount="indefinite"/>
+                </ellipse>
+                <ellipse cx="130" cy="42" rx="2" ry="1.3" fill="#F8C8D4" opacity="0.5">
+                  <animateTransform attributeName="transform" type="translate" values="0,0;6,22;12,44" dur="5.5s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0.5;0.25;0" dur="5.5s" repeatCount="indefinite"/>
+                </ellipse>
+                <ellipse cx="160" cy="52" rx="1.6" ry="1.1" fill="#FBDAE2" opacity="0.5">
+                  <animateTransform attributeName="transform" type="translate" values="0,0;-3,18;-6,36" dur="4.5s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0.5;0.25;0" dur="4.5s" repeatCount="indefinite"/>
+                </ellipse>
+              </g>
+              <!-- light rays -->
+              <g opacity="0.08">
+                <polygon points="170,0 190,0 140,120 120,120" fill="#FFF8E0"/>
+                <polygon points="195,0 210,0 160,120 145,120" fill="#FFF8E0"/>
+              </g>
+            </svg>
+          </div>
+          <div class="phone-card-comment">
+            <span class="ai-tag">AI 코멘트</span>
+            여의도 벚꽃길, 아이와 함께한 첫 봄 나들이. 올해도 이곳에서 봄을 맞이했다.
+          </div>
+          <div class="phone-card-meta">
+            <span>📍 여의도 한강공원</span>
+            <span>🌤️ 맑음 18°</span>
+          </div>
+        </div>
+        <div class="phone-card" style="padding: 12px 14px;">
+          <div class="phone-card-comment" style="border-left-color: var(--muted-sage);">
+            <span class="ai-tag" style="color: var(--muted-sage);">📂 자동 분류</span>
+            가족·육아 앨범에 3장 추가됨
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PAIN POINTS ─── -->
+<section class="section pain-section">
+  <div class="section-label reveal">PROBLEM</div>
+  <h2 class="section-title reveal">
+    기록하고 싶은 마음,<br>
+    왜 항상 멈춰버릴까요?
+  </h2>
+  <p class="section-desc reveal">
+    FGI 조사 결과, 30~40대 부모 고객 대부분이<br>
+    같은 고민을 하고 있었습니다.
+  </p>
+
+  <div class="pain-cards">
+    <div class="pain-card reveal">
+      <div class="pain-icon scroll">📱</div>
+      <div>
+        <h4>끝없는 스크롤의 고통</h4>
+        <p>수천 장의 사진 속에서 원하는 한 장을 찾으려면 끝없이 넘겨야 합니다. 음식 사진은 다 비슷해 보이고, 서류 캡처는 어디에 묻혔는지 모릅니다.</p>
+      </div>
+    </div>
+    <div class="pain-card reveal">
+      <div class="pain-icon record">✍️</div>
+      <div>
+        <h4>기록 의지 vs 실행의 벽</h4>
+        <p>육아일기 앱을 깔았지만 3일 만에 포기. "뭘 써야 하지?" 고민만 하다 결국 사진만 찍고 끝나는 일상이 반복됩니다.</p>
+      </div>
+    </div>
+    <div class="pain-card reveal">
+      <div class="pain-icon search">🔍</div>
+      <div>
+        <h4>기존 앱의 한계</h4>
+        <p>구글 포토, 애플 포토는 날짜·얼굴 분류만 가능합니다. "이사 서류 캡처", "맛집 리스트"처럼 내가 왜 찍었는지는 알아주지 못합니다.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pain-quote reveal">
+    <p>"애한테 미안해요. 기록하고 싶은 마음은 있는데, 찍기만 하고 정리는 절대 안 하게 돼요. 시간이 없으니까..."</p>
+    <span class="source">— FGI 인터뷰 참여자, 43세 맞벌이 엄마</span>
+  </div>
+</section>
+
+<!-- ─── FEATURES ─── -->
+<section class="section features-section">
+  <div class="section-label reveal">SOLUTION</div>
+  <h2 class="section-title reveal">
+    AI가 대신합니다.<br>
+    당신은 그냥 살기만 하세요.
+  </h2>
+  <p class="section-desc reveal">
+    사진을 찍기만 하면 나머지는 골든레코드가 합니다.<br>
+    제로 이포트, 자동 기록의 시작.
+  </p>
+
+  <div class="feature-list">
+    <div class="feature-item reveal">
+      <div class="feature-num">1</div>
+      <h4>AI 자동 분류 & 정밀 검색</h4>
+      <p>추억 사진과 정보 캡처를 자동으로 구분합니다. 육아·여행·서류 등 테마별로 정리되고, 유사·중복 사진 중 베스트 컷만 골라냅니다.</p>
+      <span class="feature-tag">끝없는 스크롤 해방</span>
+    </div>
+    <div class="feature-item reveal">
+      <div class="feature-num">2</div>
+      <h4>AI 코멘트 자동 생성</h4>
+      <p>날짜·장소·상황을 기반으로 AI가 코멘트 초안을 작성합니다. 마음에 들면 그대로, 아니면 자유롭게 수정하세요. 당신의 편집권은 100% 보장됩니다.</p>
+      <span class="feature-tag">"뭘 써야 하지?" 고민 끝</span>
+    </div>
+    <div class="feature-item reveal">
+      <div class="feature-num">3</div>
+      <h4>사진 없는 날도 기록</h4>
+      <p>위치·시간 데이터를 활용해 사진을 찍지 않은 날에도 AI가 하루를 기록합니다. 기록의 연속성이 끊기지 않아 포기할 일이 없습니다.</p>
+      <span class="feature-tag">365일 자동 데일리 로깅</span>
+    </div>
+    <div class="feature-item reveal">
+      <div class="feature-num">4</div>
+      <h4>포토북으로 완성</h4>
+      <p>AI가 선별·정리한 기록이 아름다운 포토북으로 완성됩니다. 디지털 기록이 손에 잡히는 추억이 되는 순간, 아이에게 줄 최고의 선물.</p>
+      <span class="feature-tag">소장 가치 있는 인생 기록</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── HOW IT WORKS ─── -->
+<section class="section how-section">
+  <div class="section-label reveal">HOW IT WORKS</div>
+  <h2 class="section-title reveal">이렇게 간단합니다</h2>
+  <p class="section-desc reveal">
+    복잡한 설정도, 매일 해야 할 일도 없습니다.<br>
+    그냥 사진을 찍으세요. 나머지는 AI가 합니다.
+  </p>
+
+  <div class="steps">
+    <div class="step reveal">
+      <div class="step-line">
+        <div class="step-dot">📸</div>
+        <div class="step-connector"></div>
+      </div>
+      <div class="step-content">
+        <h4>평소처럼 사진을 찍으세요</h4>
+        <p>아이 사진, 음식 사진, 서류 캡처... 뭐든 상관없어요. 당신이 하던 대로 하면 됩니다.</p>
+      </div>
+    </div>
+    <div class="step reveal">
+      <div class="step-line">
+        <div class="step-dot">🤖</div>
+        <div class="step-connector"></div>
+      </div>
+      <div class="step-content">
+        <h4>AI가 알아서 정리합니다</h4>
+        <p>사진이 자동으로 분류되고, 베스트 컷이 선별되며, 코멘트 초안이 작성됩니다. 알림이 오면 확인만 하세요.</p>
+      </div>
+    </div>
+    <div class="step reveal">
+      <div class="step-line">
+        <div class="step-dot">📖</div>
+      </div>
+      <div class="step-content">
+        <h4>쌓인 기록이 인생 앨범이 됩니다</h4>
+        <p>시간이 지나면 AI가 월간·연간 스토리를 만들어 줍니다. 원하면 포토북으로 인쇄해 아이에게 선물하세요.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA ─── -->
+<section class="section cta-section" id="signup">
+  <h2 class="reveal">당신의 사진첩,<br>인생 기록으로 바꿔보세요</h2>
+  <p class="sub reveal">사진을 찍기만 하세요. 나머지는 AI가 대신합니다.</p>
+
+  <div class="reveal" style="margin-top: 8px;">
+    <div style="display: inline-block; margin-top: 20px; padding: 18px 48px; background: var(--deep-navy); border-radius: 60px; box-shadow: 0 8px 32px rgba(27,45,79,0.25);">
+      <span style="font-size: 20px; font-weight: 700; color: #fff; letter-spacing: 1px;">곧 출시 예정</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-logo">GOLDEN RECORD</div>
+  골든레코드 — AI가 대신 기록하는 우리 가족 앨범<br>
+  © 2026 Golden Record. All rights reserved.
+</footer>
+
+
+<script>
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, i * 80);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
