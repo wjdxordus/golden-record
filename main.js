@@ -3127,6 +3127,13 @@ const PLANET_PHOTOS = {
   Neptune: ['/photos/neptune/IMG_7180.JPG', '/photos/neptune/IMG_7186.JPG', '/photos/neptune/IMG_7195.JPG'],
 };
 
+// 모든 행성 사진을 백그라운드에서 미리 로드
+const _preloadedImages = Object.values(PLANET_PHOTOS).flat().map(src => {
+  const img = new Image();
+  img.src = src;
+  return img;
+});
+
 let tourActive = false;
 const tourPhotoEls = [];
 
