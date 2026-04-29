@@ -19,6 +19,7 @@ export default defineConfig({
   preview: {
     host: '0.0.0.0',
     port: parseInt(process.env.PORT) || 3000,
+    allowedHosts: true,
   },
   // Ensure proper handling of assets
   assetsInclude: ['**/*.jpg', '**/*.png', '**/*.mp3'],
