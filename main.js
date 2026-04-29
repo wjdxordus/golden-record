@@ -849,8 +849,8 @@ const celestialBodies = [
     roughness: 1, 
     metalness: 0.02,
     type: "planet",
-    info: "Closest planet to the Sun. Surface temperatures range from -173°C to 427°C. Has no atmosphere and no moons.",
-    discoveryYear: "Ancient",
+    info: "태양에 가장 가까운 행성. 표면 온도는 -173°C에서 427°C까지 변합니다. 대기와 위성이 없습니다.",
+    discoveryYear: "고대",
     moons: []
   },
   {
@@ -863,8 +863,8 @@ const celestialBodies = [
     roughness: 0.6,
     metalness: 0.05,
     type: "planet",
-    info: "Hottest planet in our solar system with surface temperatures of 462°C. Has a thick, toxic atmosphere of carbon dioxide.",
-    discoveryYear: "Ancient",
+    info: "태양계에서 가장 뜨거운 행성으로 표면 온도가 462°C입니다. 두꺼운 이산화탄소 독성 대기를 지닙니다.",
+    discoveryYear: "고대",
     moons: []
   },
   {
@@ -877,10 +877,10 @@ const celestialBodies = [
     roughness: 0.5, 
     metalness: 0.01,
     type: "planet",
-    info: "The only known planet with life. 71% of surface covered by water. Has one natural satellite.",
-    discoveryYear: "N/A",
+    info: "생명체가 확인된 유일한 행성. 표면의 71%가 물로 덮여 있습니다. 자연 위성 1개를 보유합니다.",
+    discoveryYear: "해당 없음",
     moons: [
-      { name: "Moon", size: 0.27, dist: 2.5, speed: 0.037, color: new THREE.Color(0.53, 0.53, 0.53), info: "Earth's only natural satellite. Formed 4.5 billion years ago.", initialAngle: 1.2 }
+      { name: "달", size: 0.27, dist: 2.5, speed: 0.037, color: new THREE.Color(0.53, 0.53, 0.53), info: "지구의 유일한 자연 위성. 45억 년 전에 형성되었습니다.", initialAngle: 1.2 }
     ]
   },
   {
@@ -893,11 +893,11 @@ const celestialBodies = [
     roughness: 0.75,
     metalness: 0.02,
     type: "planet",
-    info: "The Red Planet. Has the largest volcano (Olympus Mons) and canyon (Valles Marineris) in the solar system.",
-    discoveryYear: "Ancient",
+    info: "붉은 행성. 태양계 최대의 화산(올림푸스 몬스)과 협곡(발레스 마리네리스)이 있습니다.",
+    discoveryYear: "고대",
     moons: [
-      { name: "Phobos", size: 0.05, dist: 1.5, speed: 0.32, color: new THREE.Color(0.4, 0.26, 0.13), info: "Largest moon of Mars. Orbits Mars 3 times per day.", initialAngle: 0.5 },
-      { name: "Deimos", size: 0.03, dist: 2.2, speed: 0.08, color: new THREE.Color(0.4, 0.26, 0.13), info: "Smaller, outer moon of Mars. Takes 30 hours to orbit Mars.", initialAngle: 2.1 }
+      { name: "포보스", size: 0.05, dist: 1.5, speed: 0.32, color: new THREE.Color(0.4, 0.26, 0.13), info: "화성 최대 위성. 하루에 화성을 3번 공전합니다.", initialAngle: 0.5 },
+      { name: "데이모스", size: 0.03, dist: 2.2, speed: 0.08, color: new THREE.Color(0.4, 0.26, 0.13), info: "화성의 더 작은 외부 위성. 화성 공전에 30시간이 걸립니다.", initialAngle: 2.1 }
     ]
   },
   {
@@ -910,7 +910,7 @@ const celestialBodies = [
     roughness: 1.0,
     metalness: 0.1,
     type: "asteroid",
-    info: "Second-largest asteroid. Has a differentiated interior with basaltic surface. Visited by Dawn spacecraft.",
+    info: "두 번째로 큰 소행성. 현무암 표면과 분화된 내부 구조를 가집니다. Dawn 탐사선이 방문했습니다.",
     discoveryYear: "1807",
     moons: []
   },
@@ -924,7 +924,7 @@ const celestialBodies = [
     roughness: 1.0,
     metalness: 0.05,
     type: "asteroid",
-    info: "Third-largest asteroid. Highly inclined orbit. Possibly a protoplanet.",
+    info: "세 번째로 큰 소행성. 크게 기울어진 궤도를 가집니다. 원시행성이었을 가능성이 있습니다.",
     discoveryYear: "1802",
     moons: []
   },
@@ -938,17 +938,17 @@ const celestialBodies = [
     roughness: 0.9,
     metalness: 0.0,
     type: "planet",
-    info: "Largest planet in our solar system. Great Red Spot is a storm larger than Earth. Has 95 known moons.",
-    discoveryYear: "Ancient",
+    info: "태양계 최대의 행성. 대적점은 지구보다 큰 폭풍입니다. 알려진 위성이 95개입니다.",
+    discoveryYear: "고대",
     moons: [
-      { name: "Io", size: 0.15, dist: 3.5, speed: 0.56, color: new THREE.Color(1.0, 1.0, 0.6), info: "Most volcanically active body in the solar system.", initialAngle: 0.8 },
-      { name: "Europa", size: 0.13, dist: 4.2, speed: 0.28, color: new THREE.Color(0.53, 0.81, 0.92), info: "Ice-covered moon with subsurface ocean. Potential for life.", initialAngle: 1.5 },
-      { name: "Ganymede", size: 0.22, dist: 5.1, speed: 0.14, color: new THREE.Color(0.55, 0.49, 0.42), info: "Largest moon in the solar system. Has its own magnetic field.", initialAngle: 3.2 },
-      { name: "Callisto", size: 0.20, dist: 6.0, speed: 0.06, color: new THREE.Color(0.41, 0.41, 0.41), info: "Most heavily cratered body in the solar system.", initialAngle: 4.9 },
-      { name: "Amalthea", size: 0.08, dist: 2.8, speed: 2.0, color: new THREE.Color(0.6, 0.4, 0.2), info: "Fifth largest moon of Jupiter. Irregular potato shape.", initialAngle: 5.2 },
-      { name: "Himalia", size: 0.05, dist: 7.5, speed: 0.013, color: new THREE.Color(0.5, 0.5, 0.5), info: "Largest irregular moon of Jupiter.", initialAngle: 2.1 },
-      { name: "Lysithea", size: 0.02, dist: 8.2, speed: 0.010, color: new THREE.Color(0.4, 0.4, 0.4), info: "Small irregular moon in Jupiter's prograde group.", initialAngle: 4.7 },
-      { name: "Elara", size: 0.03, dist: 8.0, speed: 0.011, color: new THREE.Color(0.45, 0.45, 0.45), info: "Irregular moon discovered in 1905.", initialAngle: 1.8 }
+      { name: "이오", size: 0.15, dist: 3.5, speed: 0.56, color: new THREE.Color(1.0, 1.0, 0.6), info: "태양계에서 화산 활동이 가장 활발한 천체입니다.", initialAngle: 0.8 },
+      { name: "유로파", size: 0.13, dist: 4.2, speed: 0.28, color: new THREE.Color(0.53, 0.81, 0.92), info: "지하 바다를 가진 얼음 위성. 생명체의 가능성이 있습니다.", initialAngle: 1.5 },
+      { name: "가니메데", size: 0.22, dist: 5.1, speed: 0.14, color: new THREE.Color(0.55, 0.49, 0.42), info: "태양계 최대의 위성. 자체 자기장을 가집니다.", initialAngle: 3.2 },
+      { name: "칼리스토", size: 0.20, dist: 6.0, speed: 0.06, color: new THREE.Color(0.41, 0.41, 0.41), info: "태양계에서 크레이터가 가장 많은 천체입니다.", initialAngle: 4.9 },
+      { name: "아말테아", size: 0.08, dist: 2.8, speed: 2.0, color: new THREE.Color(0.6, 0.4, 0.2), info: "목성의 다섯 번째로 큰 위성. 감자 모양의 불규칙한 형태입니다.", initialAngle: 5.2 },
+      { name: "히말리아", size: 0.05, dist: 7.5, speed: 0.013, color: new THREE.Color(0.5, 0.5, 0.5), info: "목성의 가장 큰 불규칙 위성입니다.", initialAngle: 2.1 },
+      { name: "리시테아", size: 0.02, dist: 8.2, speed: 0.010, color: new THREE.Color(0.4, 0.4, 0.4), info: "목성의 순행 그룹에 속하는 작은 불규칙 위성입니다.", initialAngle: 4.7 },
+      { name: "엘라라", size: 0.03, dist: 8.0, speed: 0.011, color: new THREE.Color(0.45, 0.45, 0.45), info: "1905년에 발견된 불규칙 위성입니다.", initialAngle: 1.8 }
     ]
   },
   {
@@ -962,18 +962,18 @@ const celestialBodies = [
     roughness: 0.9,
     metalness: 0.0,
     type: "planet",
-    info: "Famous for its prominent ring system. Less dense than water. Has 146 known moons.",
-    discoveryYear: "Ancient",
+    info: "뚜렷한 고리 시스템으로 유명합니다. 물보다 밀도가 낮습니다. 알려진 위성이 146개입니다.",
+    discoveryYear: "고대",
     moons: [
-      { name: "Mimas", size: 0.06, dist: 2.8, speed: 1.05, color: new THREE.Color(0.7, 0.7, 0.7), info: "Death Star-like appearance with giant Herschel crater.", initialAngle: 0.9 },
-      { name: "Enceladus", size: 0.08, dist: 3.2, speed: 0.73, color: new THREE.Color(0.94, 0.97, 1.0), info: "Ice geysers from south pole. Subsurface ocean.", initialAngle: 4.1 },
-      { name: "Tethys", size: 0.09, dist: 3.7, speed: 0.52, color: new THREE.Color(0.8, 0.8, 0.85), info: "Heavily cratered icy moon with large Odysseus crater.", initialAngle: 2.7 },
-      { name: "Dione", size: 0.09, dist: 4.1, speed: 0.37, color: new THREE.Color(0.75, 0.75, 0.8), info: "Ice cliffs and wispy terrain on trailing hemisphere.", initialAngle: 5.5 },
-      { name: "Rhea", size: 0.12, dist: 4.8, speed: 0.22, color: new THREE.Color(0.7, 0.7, 0.75), info: "Second largest moon of Saturn with thin oxygen atmosphere.", initialAngle: 1.3 },
-      { name: "Titan", size: 0.21, dist: 5.5, speed: 0.063, color: new THREE.Color(1.0, 0.65, 0.0), info: "Has thick atmosphere and liquid methane lakes.", initialAngle: 2.3 },
-      { name: "Hyperion", size: 0.04, dist: 6.2, speed: 0.048, color: new THREE.Color(0.6, 0.5, 0.4), info: "Chaotic rotation and sponge-like appearance.", initialAngle: 3.8 },
-      { name: "Iapetus", size: 0.11, dist: 7.0, speed: 0.014, color: new THREE.Color(0.3, 0.3, 0.3), info: "Two-tone coloration, dark leading hemisphere.", initialAngle: 0.5 },
-      { name: "Phoebe", size: 0.03, dist: 8.5, speed: 0.006, color: new THREE.Color(0.25, 0.25, 0.25), info: "Retrograde irregular moon, likely captured asteroid.", initialAngle: 4.9 }
+      { name: "미마스", size: 0.06, dist: 2.8, speed: 1.05, color: new THREE.Color(0.7, 0.7, 0.7), info: "거대한 허셜 크레이터로 데스스타처럼 보입니다.", initialAngle: 0.9 },
+      { name: "엔셀라두스", size: 0.08, dist: 3.2, speed: 0.73, color: new THREE.Color(0.94, 0.97, 1.0), info: "남극에서 얼음 간헐천 분출. 지하 바다를 가집니다.", initialAngle: 4.1 },
+      { name: "테티스", size: 0.09, dist: 3.7, speed: 0.52, color: new THREE.Color(0.8, 0.8, 0.85), info: "거대한 오디세우스 크레이터가 있는 크레이터가 많은 얼음 위성입니다.", initialAngle: 2.7 },
+      { name: "디오네", size: 0.09, dist: 4.1, speed: 0.37, color: new THREE.Color(0.75, 0.75, 0.8), info: "후행 반구에 얼음 절벽과 가는 실처럼 생긴 지형이 있습니다.", initialAngle: 5.5 },
+      { name: "레아", size: 0.12, dist: 4.8, speed: 0.22, color: new THREE.Color(0.7, 0.7, 0.75), info: "희박한 산소 대기를 가진 토성의 두 번째로 큰 위성입니다.", initialAngle: 1.3 },
+      { name: "타이탄", size: 0.21, dist: 5.5, speed: 0.063, color: new THREE.Color(1.0, 0.65, 0.0), info: "두꺼운 대기와 액체 메테인 호수를 가집니다.", initialAngle: 2.3 },
+      { name: "히페리온", size: 0.04, dist: 6.2, speed: 0.048, color: new THREE.Color(0.6, 0.5, 0.4), info: "혼돈스러운 자전과 스펀지 같은 외형을 가집니다.", initialAngle: 3.8 },
+      { name: "이아페투스", size: 0.11, dist: 7.0, speed: 0.014, color: new THREE.Color(0.3, 0.3, 0.3), info: "앞뒤 반구의 색이 달라 앞면이 어둡습니다.", initialAngle: 0.5 },
+      { name: "포이베", size: 0.03, dist: 8.5, speed: 0.006, color: new THREE.Color(0.25, 0.25, 0.25), info: "역행하는 불규칙 위성으로, 포획된 소행성으로 추정됩니다.", initialAngle: 4.9 }
     ]
   },
   {
@@ -986,15 +986,15 @@ const celestialBodies = [
     roughness: 0.85,
     metalness: 0.0,
     type: "planet",
-    info: "Ice giant tilted on its side (98° axial tilt). Has faint rings and 28 known moons.",
+    info: "옆으로 기울어진 얼음 거인 (자전축 기울기 98°). 희미한 고리와 알려진 위성 28개를 가집니다.",
     discoveryYear: "1781",
     moons: [
-      { name: "Ariel", size: 0.08, dist: 2.2, speed: 0.39, color: new THREE.Color(0.6, 0.6, 0.65), info: "Youngest surface among Uranian moons with fault valleys.", initialAngle: 2.1 },
-      { name: "Umbriel", size: 0.08, dist: 2.5, speed: 0.23, color: new THREE.Color(0.4, 0.4, 0.45), info: "Darkest of Uranus's major moons.", initialAngle: 4.8 },
-      { name: "Titania", size: 0.11, dist: 3.0, speed: 0.12, color: new THREE.Color(0.55, 0.55, 0.6), info: "Largest moon of Uranus with deep canyons.", initialAngle: 1.7 },
-      { name: "Oberon", size: 0.10, dist: 3.4, speed: 0.075, color: new THREE.Color(0.5, 0.5, 0.55), info: "Outermost major moon with ancient cratered surface.", initialAngle: 5.3 },
-      { name: "Miranda", size: 0.06, dist: 1.8, speed: 0.67, color: new THREE.Color(0.53, 0.53, 0.53), info: "Most unusual moon with extreme geological features.", initialAngle: 3.7 },
-      { name: "Puck", size: 0.03, dist: 1.5, speed: 1.18, color: new THREE.Color(0.45, 0.45, 0.5), info: "Small irregular moon discovered by Voyager 2.", initialAngle: 0.8 }
+      { name: "아리엘", size: 0.08, dist: 2.2, speed: 0.39, color: new THREE.Color(0.6, 0.6, 0.65), info: "천왕성 위성 중 가장 젊은 표면을 가지며 단층 계곡이 있습니다.", initialAngle: 2.1 },
+      { name: "움브리엘", size: 0.08, dist: 2.5, speed: 0.23, color: new THREE.Color(0.4, 0.4, 0.45), info: "천왕성의 주요 위성 중 가장 어둡습니다.", initialAngle: 4.8 },
+      { name: "티타니아", size: 0.11, dist: 3.0, speed: 0.12, color: new THREE.Color(0.55, 0.55, 0.6), info: "깊은 협곡이 있는 천왕성 최대 위성입니다.", initialAngle: 1.7 },
+      { name: "오베론", size: 0.10, dist: 3.4, speed: 0.075, color: new THREE.Color(0.5, 0.5, 0.55), info: "오래된 크레이터 표면을 가진 가장 바깥쪽의 주요 위성입니다.", initialAngle: 5.3 },
+      { name: "미란다", size: 0.06, dist: 1.8, speed: 0.67, color: new THREE.Color(0.53, 0.53, 0.53), info: "극단적인 지질학적 특징을 가진 가장 특이한 위성입니다.", initialAngle: 3.7 },
+      { name: "퍽", size: 0.03, dist: 1.5, speed: 1.18, color: new THREE.Color(0.45, 0.45, 0.5), info: "보이저 2호가 발견한 작은 불규칙 위성입니다.", initialAngle: 0.8 }
     ]
   },
   {
@@ -1007,13 +1007,13 @@ const celestialBodies = [
     roughness: 0.85,
     metalness: 0.0,
     type: "planet",
-    info: "Windiest planet with speeds up to 2,100 km/h. Deep blue color from methane in atmosphere.",
+    info: "시속 2,100km에 달하는 태양계 최강의 바람을 가진 행성. 대기 중 메테인으로 인한 짙은 파란색입니다.",
     discoveryYear: "1846",
     moons: [
-      { name: "Triton", size: 0.11, dist: 3.0, speed: 0.17, color: new THREE.Color(0.53, 0.81, 0.92), info: "Largest moon of Neptune. Orbits retrograde. Nitrogen geysers.", initialAngle: 0.9 },
-      { name: "Nereid", size: 0.02, dist: 4.8, speed: 0.003, color: new THREE.Color(0.5, 0.5, 0.5), info: "Highly eccentric orbit, likely captured Kuiper Belt object.", initialAngle: 3.2 },
-      { name: "Proteus", size: 0.03, dist: 2.2, speed: 0.89, color: new THREE.Color(0.4, 0.4, 0.4), info: "Largest irregular-shaped moon of Neptune.", initialAngle: 5.7 },
-      { name: "Larissa", size: 0.015, dist: 1.8, speed: 1.81, color: new THREE.Color(0.35, 0.35, 0.35), info: "Small inner moon discovered by Voyager 2.", initialAngle: 2.4 }
+      { name: "트리톤", size: 0.11, dist: 3.0, speed: 0.17, color: new THREE.Color(0.53, 0.81, 0.92), info: "해왕성 최대 위성. 역행 공전. 질소 간헐천이 있습니다.", initialAngle: 0.9 },
+      { name: "네레이드", size: 0.02, dist: 4.8, speed: 0.003, color: new THREE.Color(0.5, 0.5, 0.5), info: "매우 이심률이 큰 궤도, 포획된 카이퍼벨트 천체로 추정됩니다.", initialAngle: 3.2 },
+      { name: "프로테우스", size: 0.03, dist: 2.2, speed: 0.89, color: new THREE.Color(0.4, 0.4, 0.4), info: "해왕성의 가장 큰 불규칙 모양 위성입니다.", initialAngle: 5.7 },
+      { name: "라리사", size: 0.015, dist: 1.8, speed: 1.81, color: new THREE.Color(0.35, 0.35, 0.35), info: "보이저 2호가 발견한 작은 내부 위성입니다.", initialAngle: 2.4 }
     ]
   },
   {
@@ -1025,7 +1025,7 @@ const celestialBodies = [
     roughness: 1.0,
     metalness: 0.0,
     type: "dwarf",
-    info: "Largest object in asteroid belt. Has water ice and possible subsurface ocean. Visited by Dawn spacecraft.",
+    info: "소행성대에서 가장 큰 천체. 수빙과 지하 바다가 있을 가능성이 있습니다. Dawn 탐사선이 방문했습니다.",
     discoveryYear: "1801",
     moons: []
   },
@@ -1039,10 +1039,10 @@ const celestialBodies = [
     roughness: 1.0,
     metalness: 0.0,
     type: "dwarf",
-    info: "Former ninth planet. Has heart-shaped nitrogen plains. Binary system with Charon.",
+    info: "옛 아홉 번째 행성. 하트 모양의 질소 평원이 있습니다. 카론과 이중 천체 시스템을 이룹니다.",
     discoveryYear: "1930",
     moons: [
-      { name: "Charon", size: 0.2, dist: 1.8, speed: 0.16, color: new THREE.Color(0.5, 0.5, 0.5), info: "Largest moon relative to its parent planet. Tidally locked to Pluto.", initialAngle: 1.8 }
+      { name: "카론", size: 0.2, dist: 1.8, speed: 0.16, color: new THREE.Color(0.5, 0.5, 0.5), info: "모행성 대비 가장 큰 위성. 명왕성과 조석 고정되어 있습니다.", initialAngle: 1.8 }
     ]
   },
   {
@@ -1055,10 +1055,10 @@ const celestialBodies = [
     roughness: 1.0,
     metalness: 0.0,
     type: "dwarf",
-    info: "Most massive dwarf planet. Discovery led to Pluto's reclassification. Very reflective surface.",
+    info: "가장 질량이 큰 왜소행성. 이 천체의 발견으로 명왕성이 재분류되었습니다. 매우 높은 반사율을 가집니다.",
     discoveryYear: "2005",
     moons: [
-      { name: "Dysnomia", size: 0.04, dist: 2.0, speed: 0.067, color: new THREE.Color(0.6, 0.6, 0.6), info: "Only known moon of Eris.", initialAngle: 4.5 }
+      { name: "디스노미아", size: 0.04, dist: 2.0, speed: 0.067, color: new THREE.Color(0.6, 0.6, 0.6), info: "에리스의 유일하게 알려진 위성입니다.", initialAngle: 4.5 }
     ]
   },
   {
@@ -1071,10 +1071,10 @@ const celestialBodies = [
     roughness: 1.0,
     metalness: 0.0,
     type: "dwarf",
-    info: "Third-largest dwarf planet. Reddish surface likely due to organic compounds. No atmosphere.",
+    info: "세 번째로 큰 왜소행성. 유기 화합물로 인해 표면이 붉습니다. 대기가 없습니다.",
     discoveryYear: "2005",
     moons: [
-      { name: "MK 2", size: 0.02, dist: 1.5, speed: 0.083, color: new THREE.Color(0.4, 0.4, 0.4), info: "Small, dark moon of Makemake.", initialAngle: 0.7 }
+      { name: "MK 2", size: 0.02, dist: 1.5, speed: 0.083, color: new THREE.Color(0.4, 0.4, 0.4), info: "마케마케의 작고 어두운 위성입니다.", initialAngle: 0.7 }
     ]
   },
   {
@@ -1087,11 +1087,11 @@ const celestialBodies = [
     roughness: 0.8,
     metalness: 0.1,
     type: "dwarf",
-    info: "Elongated dwarf planet that spins every 4 hours. Has ring system and crystalline water ice surface.",
+    info: "4시간마다 자전하는 타원형 왜소행성. 고리 시스템과 결정질 수빙 표면을 가집니다.",
     discoveryYear: "2004",
     moons: [
-      { name: "Hi'iaka", size: 0.05, dist: 2.2, speed: 0.02, color: new THREE.Color(0.87, 0.87, 0.87), info: "Larger moon of Haumea.", initialAngle: 2.9 },
-      { name: "Namaka", size: 0.03, dist: 1.8, speed: 0.056, color: new THREE.Color(0.8, 0.8, 0.8), info: "Smaller, inner moon of Haumea.", initialAngle: 5.1 }
+      { name: "히이아카", size: 0.05, dist: 2.2, speed: 0.02, color: new THREE.Color(0.87, 0.87, 0.87), info: "하우메아의 더 큰 위성입니다.", initialAngle: 2.9 },
+      { name: "나마카", size: 0.03, dist: 1.8, speed: 0.056, color: new THREE.Color(0.8, 0.8, 0.8), info: "하우메아의 더 작은 내부 위성입니다.", initialAngle: 5.1 }
     ]
   },
   {
@@ -1104,7 +1104,7 @@ const celestialBodies = [
     roughness: 1.0,
     metalness: 0.0,
     type: "dwarf",
-    info: "Extremely distant object in extended scattered disk. Takes 11,400 years to orbit the Sun.",
+    info: "확장 산란 원반의 매우 먼 천체. 태양 공전에 11,400년이 걸립니다.",
     discoveryYear: "2003",
     moons: []
   },
@@ -1118,10 +1118,10 @@ const celestialBodies = [
     roughness: 1.0,
     metalness: 0.0,
     type: "dwarf",
-    info: "Classical Kuiper Belt object. Has ring system and one known moon.",
+    info: "고전적 카이퍼벨트 천체. 고리 시스템과 알려진 위성 1개를 가집니다.",
     discoveryYear: "2002",
     moons: [
-      { name: "Weywot", size: 0.02, dist: 1.6, speed: 0.083, color: new THREE.Color(0.33, 0.33, 0.33), info: "Moon of Quaoar.", initialAngle: 1.3 }
+      { name: "웨이워트", size: 0.02, dist: 1.6, speed: 0.083, color: new THREE.Color(0.33, 0.33, 0.33), info: "콰오아르의 위성입니다.", initialAngle: 1.3 }
     ]
   },
   {
@@ -1134,10 +1134,10 @@ const celestialBodies = [
     roughness: 1.0,
     metalness: 0.0,
     type: "dwarf",
-    info: "Plutino in 2:3 resonance with Neptune. Sometimes called 'anti-Pluto'.",
+    info: "해왕성과 2:3 공명하는 플루티노. '반명왕성'이라 불리기도 합니다.",
     discoveryYear: "2004",
     moons: [
-      { name: "Vanth", size: 0.06, dist: 1.9, speed: 0.1, color: new THREE.Color(0.27, 0.27, 0.27), info: "Large moon of Orcus.", initialAngle: 4.8 }
+      { name: "반스", size: 0.06, dist: 1.9, speed: 0.1, color: new THREE.Color(0.27, 0.27, 0.27), info: "오르쿠스의 큰 위성입니다.", initialAngle: 4.8 }
     ]
   },
   {
@@ -1150,10 +1150,10 @@ const celestialBodies = [
     roughness: 1.0,
     metalness: 0.0,
     type: "dwarf",
-    info: "Red-colored scattered disk object. Has slow rotation period of 22 hours.",
+    info: "붉은색 산란 원반 천체. 22시간의 느린 자전 주기를 가집니다.",
     discoveryYear: "2007",
     moons: [
-      { name: "Xiangliu", size: 0.03, dist: 1.7, speed: 0.1, color: new THREE.Color(0.4, 0.4, 0.4), info: "Moon of Gonggong.", initialAngle: 3.8 }
+      { name: "샹리우", size: 0.03, dist: 1.7, speed: 0.1, color: new THREE.Color(0.4, 0.4, 0.4), info: "공공의 위성입니다.", initialAngle: 3.8 }
     ]
   },
   {
@@ -1166,7 +1166,7 @@ const celestialBodies = [
     roughness: 1.0,
     metalness: 0.0,
     type: "tno",
-    info: "Large classical Kuiper Belt object. Elongated shape with rapid rotation.",
+    info: "대형 고전적 카이퍼벨트 천체. 빠른 자전으로 인한 타원형 모양입니다.",
     discoveryYear: "2000",
     moons: []
   },
@@ -1180,7 +1180,7 @@ const celestialBodies = [
     roughness: 1.0,
     metalness: 0.0,
     type: "tno",
-    info: "Plutino with very red surface. May have experienced thermal evolution.",
+    info: "매우 붉은 표면을 가진 플루티노. 열 진화를 겪었을 가능성이 있습니다.",
     discoveryYear: "2001",
     moons: []
   },
@@ -1194,10 +1194,10 @@ const celestialBodies = [
     roughness: 1.0,
     metalness: 0.0,
     type: "tno",
-    info: "Large trans-Neptunian object with a known moon.",
+    info: "알려진 위성을 가진 대형 해왕성 너머 천체입니다.",
     discoveryYear: "2004",
     moons: [
-      { name: "Actaea", size: 0.04, dist: 1.4, speed: 0.09, color: new THREE.Color(0.5, 0.5, 0.55), info: "Moon of Salacia, discovered in 2006.", initialAngle: 1.9 }
+      { name: "악타이아", size: 0.04, dist: 1.4, speed: 0.09, color: new THREE.Color(0.5, 0.5, 0.55), info: "살라키아의 위성으로, 2006년에 발견되었습니다.", initialAngle: 1.9 }
     ]
   },
   {
@@ -1210,10 +1210,10 @@ const celestialBodies = [
     roughness: 1.0,
     metalness: 0.0,
     type: "dwarf",
-    info: "One of the largest known dwarf planets, very red in color.",
+    info: "알려진 왜소행성 중 가장 큰 것 중 하나로, 매우 붉은 색을 띱니다.",
     discoveryYear: "2007",
     moons: [
-      { name: "S/2016 (225088) 1", size: 0.025, dist: 1.6, speed: 0.08, color: new THREE.Color(0.4, 0.4, 0.4), info: "Small moon of 2007 OR10.", initialAngle: 5.1 }
+      { name: "S/2016 (225088) 1", size: 0.025, dist: 1.6, speed: 0.08, color: new THREE.Color(0.4, 0.4, 0.4), info: "2007 OR10의 작은 위성입니다.", initialAngle: 5.1 }
     ]
   }
 ];
@@ -2187,17 +2187,17 @@ if (planetList) {
   };
 
   const typeLabels = {
-    planet: '🪐 PLANETS',
-    dwarf: '🌍 DWARF PLANETS', 
-    asteroid: '☄️ MAJOR ASTEROIDS',
-    tno: '🌌 TRANS-NEPTUNIAN OBJECTS'
+    planet: '🪐 행성',
+    dwarf: '🌍 왜소행성',
+    asteroid: '☄️ 주요 소행성',
+    tno: '🌌 해왕성 너머 천체'
   };
 
   Object.entries(groupedBodies).forEach(([type, bodies]) => {
     if (bodies.length === 0) return;
     
     const categoryHeader = document.createElement('div');
-    categoryHeader.className = 'category-header';
+    categoryHeader.className = `category-header category-${type}`;
     categoryHeader.innerHTML = `<strong>${typeLabels[type]}</strong>`;
     planetList.appendChild(categoryHeader);
 
@@ -2206,13 +2206,13 @@ if (planetList) {
       const planetItem = document.createElement('div');
       planetItem.className = `planet-item ${body.type}`;
       
-      const moonText = body.moons && body.moons.length > 0 ? 
-        `<br><small>🌙 Moons: ${body.moons.length}</small>` : '';
-      
+      const moonText = body.moons && body.moons.length > 0 ?
+        `<br><small>🌙 위성: ${body.moons.length}</small>` : '';
+
       planetItem.innerHTML = `
         <strong>${body.name}</strong>
-        <br><small>📏 Distance: ${body.dist} AU | Size: ${body.size}</small>
-        <br><small>🗓️ Discovered: ${body.discoveryYear}</small>
+        <br><small>📏 거리: ${body.dist} AU | 크기: ${body.size}</small>
+        <br><small>🗓️ 발견: ${body.discoveryYear}</small>
         ${moonText}
       `;
       
@@ -2258,24 +2258,24 @@ function showPlanetInfoCard(body, planetIndex) {
   
   // Set type badge
   const typeLabels = {
-    'planet': 'PLANET',
-    'dwarf': 'DWARF PLANET',
-    'asteroid': 'ASTEROID',
-    'tno': 'TNO'
+    'planet': '행성',
+    'dwarf': '왜소행성',
+    'asteroid': '소행성',
+    'tno': '해왕성 외부 천체'
   };
-  planetTypeBadge.textContent = typeLabels[body.type] || 'CELESTIAL BODY';
+  planetTypeBadge.textContent = typeLabels[body.type] || '천체';
 
   // Calculate orbital period in years (simplified calculation)
   const orbitalPeriodYears = Math.sqrt(Math.pow(body.dist, 3));
   if (orbitalPeriodYears < 1) {
-    orbitalPeriod.textContent = `${Math.round(orbitalPeriodYears * 365)} days`;
+    orbitalPeriod.textContent = `${Math.round(orbitalPeriodYears * 365)}일`;
   } else if (orbitalPeriodYears < 10) {
-    orbitalPeriod.textContent = `${orbitalPeriodYears.toFixed(1)} years`;
+    orbitalPeriod.textContent = `${orbitalPeriodYears.toFixed(1)}년`;
   } else {
-    orbitalPeriod.textContent = `${Math.round(orbitalPeriodYears)} years`;
+    orbitalPeriod.textContent = `${Math.round(orbitalPeriodYears)}년`;
   }
 
-  sizeRelative.textContent = `${body.size}x Earth`;
+  sizeRelative.textContent = `${body.size}x 지구`;
   distanceFromSun.textContent = `${body.dist} AU`;
   discoveryYear.textContent = body.discoveryYear;
   planetDescription.textContent = body.info;
@@ -2293,17 +2293,17 @@ function showPlanetInfoCard(body, planetIndex) {
       const moonItem = document.createElement('div');
       moonItem.className = 'moon-item';
       
-      const orbitalPeriodDays = moon.speed > 0 ? (2 * Math.PI / moon.speed).toFixed(1) : 'Unknown';
-      
+      const orbitalPeriodDays = moon.speed > 0 ? (2 * Math.PI / moon.speed).toFixed(1) : '미상';
+
       moonItem.innerHTML = `
         <div class="moon-name">🌙 ${moon.name}</div>
         <div class="moon-info">
-          Size: ${moon.size}x Earth<br>
-          Distance: ${moon.dist} planet radii<br>
-          Period: ${orbitalPeriodDays} days
+          크기: ${moon.size}x 지구<br>
+          거리: ${moon.dist} 행성 반경<br>
+          주기: ${orbitalPeriodDays}일
         </div>
         <div class="moon-follow-btn">
-          <button class="follow-moon-btn">🎯 Follow</button>
+          <button class="follow-moon-btn">🎯 추적</button>
         </div>
       `;
       
@@ -2362,14 +2362,14 @@ function updateFollowButtonState(planetIndex) {
   currentPlanetIndex = planetIndex;
   
   if (followingTarget === currentPlanet && followingType === 'planet') {
-    followBtn.textContent = '🛑 STOP FOLLOWING';
+    followBtn.textContent = '🛑 추적 중지';
     followBtn.classList.add('following');
     if (stopFollowBtn) {
       stopFollowBtn.style.display = 'block';
       stopFollowBtn.classList.add('active');
     }
   } else {
-    followBtn.textContent = '🎯 FOLLOW PLANET';
+    followBtn.textContent = '🎯 행성 추적';
     followBtn.classList.remove('following');
     if (stopFollowBtn && !followingTarget) {
       stopFollowBtn.style.display = 'none';
@@ -2487,7 +2487,7 @@ function stopFollowingPlanet() {
   const stopFollowBtn = document.getElementById('stopFollowBtn');
   
   if (followBtn) {
-    followBtn.textContent = '🎯 FOLLOW PLANET';
+    followBtn.textContent = '🎯 행성 추적';
     followBtn.classList.remove('following');
   }
   
@@ -2569,10 +2569,10 @@ function startEclipseTour() {
     const emojiElement = infoPanel.querySelector('div[style*="font-size:40px"]');
     
     if (eclipseType === 'solar') {
-      if (titleElement) titleElement.textContent = 'Solar Eclipse: Cinematic Tour';
+      if (titleElement) titleElement.textContent = '일식: 시네마틱 투어';
       if (emojiElement) emojiElement.textContent = '🌒';
     } else {
-      if (titleElement) titleElement.textContent = 'Lunar Eclipse: Cinematic Tour';
+      if (titleElement) titleElement.textContent = '월식: 시네마틱 투어';
       if (emojiElement) emojiElement.textContent = '🌕';
     }
   }
@@ -2583,10 +2583,10 @@ function startEclipseTour() {
   
   if (eclipseType === 'solar' && solarBtn) {
     solarBtn.classList.add('active');
-    solarBtn.textContent = '⏹️ Stop Solar Tour';
+    solarBtn.textContent = '⏹️ 일식 투어 중지';
   } else if (eclipseType === 'lunar' && lunarBtn) {
     lunarBtn.classList.add('active');
-    lunarBtn.textContent = '⏹️ Stop Lunar Tour';
+    lunarBtn.textContent = '⏹️ 월식 투어 중지';
   }
   
   // Hide all UI elements during tour for cinematic experience
@@ -2680,47 +2680,47 @@ function updateEclipsePhaseInfo() {
   // Different phase descriptions for solar vs lunar eclipse
   const solarEclipseInfo = [
     {
-      title: "Phase 1: Getting Ready (Alignment)",
-      desc: "We start far away so you can see the Sun, Earth and Moon line up. Think of it as three friends standing in a row — from our view, they look perfect when they line up. This helps you see how the solar eclipse can happen."
+      title: "1단계: 준비 (정렬)",
+      desc: "태양, 지구, 달이 어떻게 일직선으로 정렬되는지 볼 수 있도록 멀리서 시작합니다. 세 친구가 한 줄로 서는 것처럼 — 우리 시야에서 완벽하게 정렬될 때 일식이 발생합니다."
     },
     {
-      title: "Phase 2: First Contact (Moon Moves In)",
-      desc: "Now the Moon slowly moves between the Earth and the Sun. You will see the Sun start to look a little bitten — that's the Moon covering it. Take your time, watch the motion."
+      title: "2단계: 첫 접촉 (달이 이동)",
+      desc: "달이 지구와 태양 사이로 천천히 이동합니다. 태양이 조금씩 가려지기 시작합니다 — 달이 태양을 덮고 있기 때문입니다. 천천히 그 움직임을 감상하세요."
     },
     {
-      title: "Phase 3: Approaching Totality (Shadow Grows)",
-      desc: "The Moon's shadow stretches over the Earth. The light will change and things will get dimmer — like when clouds pass over the sun. We'll move closer so you can feel the scale."
+      title: "3단계: 개기일식 접근 (그림자 확대)",
+      desc: "달의 그림자가 지구 위로 드리웁니다. 빛이 변하고 점점 어두워집니다 — 구름이 태양을 지나갈 때처럼요. 규모를 느낄 수 있도록 더 가까이 이동합니다."
     },
     {
-      title: "Phase 4: Total Solar Eclipse (The Corona)",
-      desc: "For a brief magical moment the Sun is hidden and we can see the corona — a beautiful glowing ring. It's one of the most stunning sights in space. We'll slow down so you can enjoy every second."
+      title: "4단계: 개기일식 (코로나)",
+      desc: "짧은 마법 같은 순간, 태양이 가려지고 코로나 — 아름다운 발광 고리 — 를 볼 수 있습니다. 우주에서 가장 경이로운 장면 중 하나입니다. 매 순간을 즐길 수 있도록 천천히 진행됩니다."
     },
     {
-      title: "Phase 5: The Shadow Passes (Ending)",
-      desc: "The Moon moves on and sunlight returns. The shadow sweeps away and everything goes back to normal. We'll pull back so you can see the full scene again."
+      title: "5단계: 그림자 통과 (마무리)",
+      desc: "달이 이동하고 햇빛이 돌아옵니다. 그림자가 사라지고 모든 것이 정상으로 돌아옵니다. 전체 장면을 다시 볼 수 있도록 뒤로 물러납니다."
     }
   ];
 
   const lunarEclipseInfo = [
     {
-      title: "Phase 1: Getting Ready (Alignment)",
-      desc: "We start far away so you can see the Sun, Earth and Moon line up. Think of it as three friends standing in a row — but this time Earth is in the middle, blocking sunlight from reaching the Moon. This helps you see how the lunar eclipse can happen."
+      title: "1단계: 준비 (정렬)",
+      desc: "태양, 지구, 달이 어떻게 일직선으로 정렬되는지 볼 수 있도록 멀리서 시작합니다. 이번에는 지구가 가운데에서 달에 도달하는 햇빛을 막습니다. 월식이 왜 발생하는지 이해하는 데 도움이 됩니다."
     },
     {
-      title: "Phase 2: Entering Earth's Shadow (Penumbra)",
-      desc: "Now the Moon slowly moves into Earth's shadow. You will see the Moon start to look a little darker — that's Earth's shadow covering it. The Moon doesn't disappear, it just gets dimmer as Earth blocks the sunlight."
+      title: "2단계: 지구 그림자 진입 (반그림자)",
+      desc: "달이 지구의 그림자 안으로 천천히 이동합니다. 달이 조금씩 어두워지기 시작합니다 — 지구의 그림자가 달을 덮고 있기 때문입니다. 달이 사라지는 것이 아니라 지구가 햇빛을 막아 어두워지는 것입니다."
     },
     {
-      title: "Phase 3: Deeper Shadow (Umbra Approaches)",
-      desc: "The Moon moves deeper into Earth's shadow. The light will change and the Moon will get much darker — like when you stand in someone's shadow. We'll move closer so you can see how Earth completely blocks direct sunlight."
+      title: "3단계: 깊은 그림자 (본그림자 접근)",
+      desc: "달이 지구의 그림자 더 깊이 이동합니다. 달이 훨씬 어두워집니다 — 누군가의 그림자 안에 서 있는 것처럼요. 지구가 직사광선을 완전히 차단하는 모습을 볼 수 있도록 더 가까이 이동합니다."
     },
     {
-      title: "Phase 4: Total Lunar Eclipse (Complete Shadow)",
-      desc: "For a moment the Moon is completely in Earth's shadow! Even though no direct sunlight reaches it, the Moon doesn't completely disappear. Some light still reaches it after bending through Earth's atmosphere, which is why we can still see it faintly."
+      title: "4단계: 개기월식 (완전한 그림자)",
+      desc: "달이 완전히 지구의 그림자 안에 들어갑니다! 직접적인 햇빛이 도달하지 않아도 달은 완전히 사라지지 않습니다. 지구 대기를 통해 굴절된 빛이 달에 도달하기 때문에 희미하게 보입니다."
     },
     {
-      title: "Phase 5: Leaving the Shadow (Ending)",
-      desc: "The Moon moves out of Earth's shadow and returns to its normal bright color. The shadow passes away and everything goes back to normal. We'll pull back so you can see the full scene again."
+      title: "5단계: 그림자 탈출 (마무리)",
+      desc: "달이 지구의 그림자를 벗어나 원래의 밝은 색으로 돌아옵니다. 그림자가 사라지고 모든 것이 정상으로 돌아옵니다. 전체 장면을 다시 볼 수 있도록 뒤로 물러납니다."
     }
   ];
   
@@ -2826,11 +2826,11 @@ function stopEclipseTour() {
   
   if (solarBtn) {
     solarBtn.classList.remove('active');
-    solarBtn.textContent = '🌒 Solar Eclipse Tour';
+    solarBtn.textContent = '🌑 일식 투어';
   }
   if (lunarBtn) {
     lunarBtn.classList.remove('active');
-    lunarBtn.textContent = '🌕 Lunar Eclipse Tour';
+    lunarBtn.textContent = '🌙 월식 투어';
   }
   
   console.log('Eclipse Tour ended. Welcome back to normal view!');
@@ -2940,6 +2940,13 @@ if (stopFollowBtn) {
 const followSunBtn = document.getElementById('followSunBtn');
 if (followSunBtn) {
   followSunBtn.addEventListener('click', () => {
+    followSun();
+  });
+}
+
+const followSunBtnMobile = document.getElementById('followSunBtnMobile');
+if (followSunBtnMobile) {
+  followSunBtnMobile.addEventListener('click', () => {
     followSun();
   });
 }
@@ -3104,3 +3111,207 @@ window.addEventListener("resize", () => {
   updatePlanetLabels();
   updateMoonLabels();
 });
+
+// ── Planet Photo Tour ────────────────────────────────────────────────────────
+// celestialBodies indices for the 8 main planets
+const TOUR_PLANET_INDICES = [0, 1, 2, 3, 6, 7, 8, 9];
+
+const PLANET_PHOTOS = {
+  Mercury: ['/photos/mercury/IMG_7201.JPG', '/photos/mercury/IMG_7203.PNG', '/photos/mercury/IMG_7204.JPG'],
+  Venus:   ['/photos/venus/IMG_7138.JPG',   '/photos/venus/IMG_7213.JPG',   '/photos/venus/IMG_7214.JPG'],
+  Earth:   ['/photos/earth/IMG_6998.png',   '/photos/earth/IMG_6999.JPG',   '/photos/earth/IMG_7004.JPG'],
+  Mars:    ['/photos/mars/IMG_7209.JPG',    '/photos/mars/IMG_7210.JPG',    '/photos/mars/IMG_7211.JPG'],
+  Jupiter: ['/photos/jupiter/IMG_7208.PNG', '/photos/jupiter/IMG_7215.JPG', '/photos/jupiter/IMG_7218.JPG'],
+  Saturn:  ['/photos/saturn/edu.jpeg',      '/photos/saturn/IMG_7049%202.JPG', '/photos/saturn/IMG_7051.JPG'],
+  Uranus:  ['/photos/uranus/IMG_6923.jpg',  '/photos/uranus/IMG_6929.jpg',  '/photos/uranus/IMG_7137.JPG'],
+  Neptune: ['/photos/neptune/IMG_7180.JPG', '/photos/neptune/IMG_7186.JPG', '/photos/neptune/IMG_7195.JPG'],
+};
+
+let tourActive = false;
+const tourPhotoEls = [];
+
+function tourSleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+function clearTourPhotos() {
+  tourPhotoEls.forEach(el => {
+    el.style.opacity = '0';
+    setTimeout(() => { if (el.parentNode) el.parentNode.removeChild(el); }, 700);
+  });
+  tourPhotoEls.length = 0;
+}
+
+function getPlanetScreenCenter(planetIndex) {
+  const v = new THREE.Vector3();
+  planetMeshes[planetIndex].mesh.getWorldPosition(v);
+  v.project(camera);
+  return {
+    x: (v.x *  0.5 + 0.5) * window.innerWidth,
+    y: (v.y * -0.5 + 0.5) * window.innerHeight,
+  };
+}
+
+async function showPlanetPhotos(planetIndex) {
+  const body  = celestialBodies[planetIndex];
+  const photos = PLANET_PHOTOS[body.name];
+  if (!photos) return;
+
+  // Wait for camera to settle on the planet
+  await tourSleep(1800);
+  if (!tourActive) return;
+
+  const { x: cx, y: cy } = getPlanetScreenCenter(planetIndex);
+
+  // 3 positions in a triangular arrangement around the planet
+  const spread = Math.min(window.innerWidth, window.innerHeight) * 0.22;
+  const angles = [Math.PI * 0.10, Math.PI * 0.72, Math.PI * 1.38];
+  const W = 234, H = 169;
+
+  for (let i = 0; i < photos.length; i++) {
+    if (!tourActive) break;
+
+    const px = cx + Math.cos(angles[i]) * spread;
+    const py = cy + Math.sin(angles[i]) * spread;
+
+    const el = document.createElement('div');
+    el.className = 'tour-photo';
+    Object.assign(el.style, {
+      position:      'fixed',
+      left:          `${px - W / 2}px`,
+      top:           `${py - H / 2}px`,
+      width:         `${W}px`,
+      height:        `${H}px`,
+      opacity:       '0',
+      transition:    'opacity 2s ease',
+      zIndex:        '5',
+      border:        '1px solid rgba(201,168,76,0.4)',
+      borderRadius:  '4px',
+      overflow:      'hidden',
+      pointerEvents: 'none',
+      boxShadow:     '0 0 12px rgba(0,0,0,0.6)',
+    });
+
+    const img = document.createElement('img');
+    img.src = photos[i];
+    Object.assign(img.style, {
+      width:          '100%',
+      height:         '100%',
+      objectFit:      'cover',
+      objectPosition: photos[i].includes('IMG_7195') ? 'top' : 'center',
+      display:        'block',
+    });
+
+    el.appendChild(img);
+    document.body.appendChild(el);
+    tourPhotoEls.push(el);
+
+    // Trigger CSS fade-in (needs two rAF frames to register transition)
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      el.style.opacity = '0.5';
+    }));
+
+    // Wait for this photo's 2-second fade-in before showing the next
+    await tourSleep(2000);
+    if (!tourActive) break;
+  }
+
+  // Linger with all 3 visible
+  await tourSleep(2000);
+}
+
+function snapCameraToPlanetForTour(planetIndex) {
+  const body   = celestialBodies[planetIndex];
+  const planet = planetMeshes[planetIndex];
+
+  followingTarget   = planet;
+  followingType     = 'planet';
+  followingPlanet   = planet;
+
+  const dist = Math.max(body.size * 8, 15);
+  followOffset.set(dist, dist * 0.5, dist);
+  lastPlanetPosition.set(0, 0, 0);
+  userCameraOffset.set(0, 0, 0);
+
+  controls.enableZoom  = false;
+  controls.minDistance = dist * 0.5;
+  controls.maxDistance = dist * 3;
+}
+
+async function startPlanetTour() {
+  if (tourActive) return;
+  tourActive = true;
+
+  // Fade out and stop the background video
+  const bgVideo = document.getElementById('bgVideo');
+  if (bgVideo) {
+    bgVideo.style.transition = 'opacity 1s ease';
+    bgVideo.style.opacity    = '0';
+    await tourSleep(1000);
+    bgVideo.pause();
+    bgVideo.style.display = 'none';
+  }
+
+  // Hide UI panels for a clean cinematic tour
+  document.querySelectorAll(
+    '.controls,.celestial-panel,.info,.floating-music-control,.nasa-footer,#showUIBtn,#playTourBtn'
+  ).forEach(el => {
+    if (!el) return;
+    el.style.transition    = 'opacity 0.5s ease';
+    el.style.opacity       = '0';
+    el.style.pointerEvents = 'none';
+  });
+
+  for (const idx of TOUR_PLANET_INDICES) {
+    if (!tourActive) break;
+
+    snapCameraToPlanetForTour(idx);
+    await showPlanetPhotos(idx);
+
+    // Fade photos out before moving to next planet
+    tourPhotoEls.forEach(el => { el.style.opacity = '0'; });
+    await tourSleep(700);
+    clearTourPhotos();
+    await tourSleep(300);
+  }
+
+  endPlanetTour();
+}
+
+function endPlanetTour() {
+  tourActive = false;
+  clearTourPhotos();
+  stopFollowingPlanet();
+
+  // Keep video hidden permanently after tour
+  const bgVideo = document.getElementById('bgVideo');
+  if (bgVideo) bgVideo.style.display = 'none';
+
+  // Restore all UI panels (clear inline styles so CSS class takes effect)
+  document.querySelectorAll(
+    '.controls,.celestial-panel,.floating-music-control,.nasa-footer'
+  ).forEach(el => {
+    if (!el) return;
+    el.style.opacity       = '';
+    el.style.pointerEvents = '';
+    el.classList.add('landing-ui-visible');
+  });
+
+  // Show play button again for replay
+  const playTourBtn = document.getElementById('playTourBtn');
+  if (playTourBtn) {
+    playTourBtn.style.transition    = 'opacity 0.8s ease';
+    playTourBtn.style.opacity       = '1';
+    playTourBtn.style.pointerEvents = '';
+  }
+
+  controls.enableZoom  = true;
+  controls.minDistance = 0.1;
+  controls.maxDistance = 1000;
+}
+
+// Wire up the play button
+const playTourBtn = document.getElementById('playTourBtn');
+if (playTourBtn) {
+  playTourBtn.addEventListener('click', startPlanetTour);
+}
+
+window.startPlanetTour = startPlanetTour;
